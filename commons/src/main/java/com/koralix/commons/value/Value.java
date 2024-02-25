@@ -8,16 +8,18 @@ public interface Value<T> {
 
     void set(T value);
 
-    static <T, V extends Value<T>> V of(Class<V> type, T value) {
-        try {
-            return type.getConstructor(value.getClass()).newInstance(value);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    Class<T> getType();
+
+    static <T> Value<T> of(Class<T> type, T value) {
+        return new WrapperValue<>(type, value);
+    }
+
+    static <T> Value<T> atomic(Class<T> type, T value) {
+        return new AtomicWrapperValue<>(type, value);
     }
 
     @SuppressWarnings("unchecked")
-    static <T, V extends Value<T>> Value<T> reactive(Class<V> type, T value, Listener<T> listener) {
+    static <T> Value<T> reactive(Class<T> type, T value, Listener<T> listener) {
         return (Value<T>) Proxy.newProxyInstance(
                 Value.class.getClassLoader(),
                 new Class<?>[] { Value.class },

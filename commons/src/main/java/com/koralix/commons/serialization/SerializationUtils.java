@@ -1,5 +1,7 @@
 package com.koralix.commons.serialization;
 
+import com.koralix.commons.value.Value;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -12,6 +14,10 @@ public final class SerializationUtils {
     @SuppressWarnings("unchecked")
     public static <S, D> Optional<Serializer<S, D>> get(Class<S> source, Class<D> destination) {
         return Optional.ofNullable((Serializer<S, D>) serializers.getOrDefault(source, Map.of()).get(destination));
+    }
+
+    public static <S, D> Optional<ValueSerializer<S, D>> value(Class<S> source, Value<D> value) {
+        return get(source, value.getType()).map(serializer -> ValueSerializer.wrap(serializer, value));
     }
 
     private static Map<Class<?>, Map<Class<?>, Serializer<?, ?>>> load() {

@@ -1,15 +1,15 @@
-package com.koralix.commons.concurrent;
-
-import com.koralix.commons.value.Value;
+package com.koralix.commons.value;
 
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.UnaryOperator;
 
-public abstract class AtomicValue<T> implements Value<T> {
+public class AtomicWrapperValue<T> implements Value<T> {
 
+    private final Class<T> type;
     private final AtomicReference<T> value;
 
-    public AtomicValue(T value) {
+    public AtomicWrapperValue(Class<T> type, T value) {
+        this.type = type;
         this.value = new AtomicReference<>(value);
     }
 
@@ -21,6 +21,11 @@ public abstract class AtomicValue<T> implements Value<T> {
     @Override
     public void set(T value) {
         this.value.set(value);
+    }
+
+    @Override
+    public Class<T> getType() {
+        return type;
     }
 
     public T getAndSet(T value) {

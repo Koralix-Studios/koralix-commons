@@ -1,8 +1,8 @@
 package com.koralix.commons.minecraft.serialization;
 
-import com.koralix.commons.concurrent.AtomicBooleanValue;
 import com.koralix.commons.serialization.SerializationUtils;
-import com.koralix.commons.value.BooleanValue;
+import com.koralix.commons.serialization.ValueSerializer;
+import com.koralix.commons.value.Value;
 import net.minecraft.network.FriendlyByteBuf;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -11,16 +11,24 @@ public class SerializersTest {
 
     @Test
     public void test() {
-        BooleanValue value = new BooleanValue(true);
-        FriendlyByteBuf buf = SerializationUtils.get(FriendlyByteBuf.class, BooleanValue.class).orElseThrow().serialize(value);
+        Value<Boolean> value = Value.of(Boolean.class, true);
+        ValueSerializer<FriendlyByteBuf, Boolean> serializer = SerializationUtils.value(FriendlyByteBuf.class, value).orElseThrow();
+        FriendlyByteBuf buf = serializer.serialize(value);
         value.set(false);
         Assertions.assertFalse(value.get());
-        SerializationUtils.get(FriendlyByteBuf.class, BooleanValue.class).orElseThrow().deserialize(buf, value);
+        serializer.deserialize(buf, value);
         Assertions.assertTrue(value.get());
+    }
 
-        AtomicBooleanValue atomicValue = new AtomicBooleanValue(true);
-        buf = SerializationUtils.get(FriendlyByteBuf.class, AtomicBooleanValue.class).orElseThrow().serialize(atomicValue);
-        Assertions.assertTrue(buf.readBoolean());
+    @Test
+    public void testAtomic() {
+        Value<Boolean> value = Value.atomic(Boolean.class, true);
+        ValueSerializer<FriendlyByteBuf, Boolean> serializer = SerializationUtils.value(FriendlyByteBuf.class, value).orElseThrow();
+        FriendlyByteBuf buf = serializer.serialize(value);
+        value.set(false);
+        Assertions.assertFalse(value.get());
+        value = serializer.deserialize(buf);
+        Assertions.assertTrue(value.get());
     }
 
 }

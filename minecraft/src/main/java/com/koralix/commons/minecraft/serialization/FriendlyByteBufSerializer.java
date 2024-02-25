@@ -1,18 +1,10 @@
 package com.koralix.commons.minecraft.serialization;
 
-import com.koralix.commons.serialization.AbstractValueSerializer;
-import com.koralix.commons.value.Value;
+import com.koralix.commons.serialization.Serializer;
 import io.netty.buffer.Unpooled;
 import net.minecraft.network.FriendlyByteBuf;
 
-import java.util.function.BiConsumer;
-import java.util.function.Function;
-
-public abstract class FriendlyByteBufSerializer<T> extends AbstractValueSerializer<FriendlyByteBuf, T> {
-
-    protected FriendlyByteBufSerializer(Class<? extends Value<T>> valueClass, BiConsumer<FriendlyByteBuf, T> serializer, Function<FriendlyByteBuf, T> deserializer) {
-        super(valueClass, serializer, deserializer);
-    }
+public abstract class FriendlyByteBufSerializer<T> implements Serializer<FriendlyByteBuf, T> {
 
     @Override
     public FriendlyByteBuf create() {
@@ -23,4 +15,12 @@ public abstract class FriendlyByteBufSerializer<T> extends AbstractValueSerializ
     public Class<FriendlyByteBuf> getSerializedClass() {
         return FriendlyByteBuf.class;
     }
+
+    @Override
+    public FriendlyByteBuf serialize(T t) {
+        FriendlyByteBuf buf = create();
+        serialize(buf, t);
+        return buf;
+    }
+
 }

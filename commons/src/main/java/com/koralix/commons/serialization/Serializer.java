@@ -14,8 +14,6 @@ public interface Serializer<S, D> {
 
     D deserialize(S s);
 
-    void deserialize(S s, D d);
-
     Class<S> getSerializedClass();
 
     Class<D> getDeserializedClass();

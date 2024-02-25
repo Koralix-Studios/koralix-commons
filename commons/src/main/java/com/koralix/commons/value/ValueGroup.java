@@ -17,7 +17,7 @@ public abstract class ValueGroup {
         listeners.getOrDefault(value, Set.of()).remove(listener);
     }
 
-    protected <T, V extends Value<T>> Value<T> create(Class<V> type, T value) {
+    protected <T> Value<T> create(Class<T> type, T value) {
         return Value.reactive(type, value, this::onValueChanged);
     }
 
