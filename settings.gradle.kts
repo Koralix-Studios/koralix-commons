@@ -14,5 +14,4 @@ pluginManagement {
 
 rootProject.name = "koralix-commons"
 include("commons")
-include("concurrent")
 include("minecraft")

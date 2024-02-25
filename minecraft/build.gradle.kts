@@ -33,7 +33,6 @@ repositories {
 
 dependencies {
     implementation(project(":commons"))
-    implementation(project(":concurrent"))
 
     compileOnly(
         group = "org.spongepowered",
