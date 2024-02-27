@@ -4,6 +4,13 @@ import com.koralix.commons.value.Value;
 
 import java.lang.reflect.Constructor;
 
+/**
+ * A serializer wrapper for values.
+ * @param <S> the source type
+ * @param <D> the destination type
+ * @see Serializer
+ * @see Value
+ */
 public class ValueSerializer<S, D> implements Serializer<S, Value<D>> {
 
     private final Serializer<S, D> serializer;
@@ -22,13 +29,16 @@ public class ValueSerializer<S, D> implements Serializer<S, Value<D>> {
         }
     }
 
+    /**
+     * Wraps the specified serializer with the specified value class.
+     * @param serializer the serializer
+     * @param valueClass the value class
+     * @param <S> the source type
+     * @param <D> the destination type
+     * @return the value serializer
+     */
     public static <S, D> ValueSerializer<S, D> wrap(Serializer<S, D> serializer, Class<? extends Value<D>> valueClass) {
         return new ValueSerializer<>(serializer, valueClass);
-    }
-
-    @SuppressWarnings("unchecked")
-    public static <S, D> ValueSerializer<S, D> wrap(Serializer<S, D> serializer, Value<D> value) {
-        return wrap(serializer, (Class<? extends Value<D>>) value.getClass());
     }
 
     @Override
@@ -48,6 +58,11 @@ public class ValueSerializer<S, D> implements Serializer<S, Value<D>> {
         return value;
     }
 
+    /**
+     * Deserializes the source object to the destination object.
+     * @param s the source object
+     * @param value the destination object
+     */
     public void deserialize(S s, Value<D> value) {
         value.set(serializer.deserialize(s));
     }

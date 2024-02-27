@@ -3,12 +3,12 @@ package com.koralix.commons.value;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
-public class ValueProxy<T> implements InvocationHandler {
+class ValueProxy<T> implements InvocationHandler {
 
     private final Value<T> value;
     private final Value.Listener<T> listener;
 
-    public ValueProxy(Value<T> value, Value.Listener<T> listener) {
+    ValueProxy(Value<T> value, Value.Listener<T> listener) {
         this.value = value;
         this.listener = listener;
     }

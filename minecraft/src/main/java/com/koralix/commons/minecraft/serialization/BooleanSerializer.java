@@ -4,6 +4,11 @@ import com.google.auto.service.AutoService;
 import com.koralix.commons.serialization.Serializer;
 import net.minecraft.network.FriendlyByteBuf;
 
+/**
+ * Minecraft serializer for boolean to FriendlyByteBuf
+ * @see Serializer
+ * @see FriendlyByteBuf
+ */
 @SuppressWarnings("rawtypes")
 @AutoService(Serializer.class)
 public class BooleanSerializer extends FriendlyByteBufSerializer<Boolean> {

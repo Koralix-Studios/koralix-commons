@@ -12,7 +12,7 @@ public class SerializersTest {
     @Test
     public void test() {
         Value<Boolean> value = Value.of(Boolean.class, true);
-        ValueSerializer<FriendlyByteBuf, Boolean> serializer = SerializationUtils.value(FriendlyByteBuf.class, value).orElseThrow();
+        ValueSerializer<FriendlyByteBuf, Boolean> serializer = value.serializer(FriendlyByteBuf.class).orElseThrow();
         FriendlyByteBuf buf = serializer.serialize(value);
         value.set(false);
         Assertions.assertFalse(value.get());
@@ -23,7 +23,7 @@ public class SerializersTest {
     @Test
     public void testAtomic() {
         Value<Boolean> value = Value.atomic(Boolean.class, true);
-        ValueSerializer<FriendlyByteBuf, Boolean> serializer = SerializationUtils.value(FriendlyByteBuf.class, value).orElseThrow();
+        ValueSerializer<FriendlyByteBuf, Boolean> serializer = value.serializer(FriendlyByteBuf.class).orElseThrow();
         FriendlyByteBuf buf = serializer.serialize(value);
         value.set(false);
         Assertions.assertFalse(value.get());

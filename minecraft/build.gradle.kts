@@ -14,7 +14,7 @@ val minecraftVersion: String by extra
 val modId: String by extra
 
 group = mavenGroup
-version = apiVersion
+version = "1.0.0-SNAPSHOT"
 
 base {
     archivesName.set("${modId}-${minecraftVersion}-${version}")
