@@ -6,7 +6,10 @@ plugins {
     id("signing")
 }
 
+val mainProjectId = "koralix-commons"
+val mainProjectName = "Koralix Commons"
 val javaVersion: String by extra
+val apiVersion: String by extra
 
 subprojects {
     plugins.apply("java")
@@ -15,7 +18,6 @@ subprojects {
 
     group = "com.koralix.commons"
 
-    val mainProjectId = "koralix-commons"
     // "koralix-commons" if the project is commons, "koralix-commons-<module>" if the project is a module
     val projectId = if (name == "commons") mainProjectId else "${mainProjectId}-${name}"
     // "Koralix Commons" if the project is commons, "Koralix Commons <Module>" if the project is a module
@@ -37,7 +39,7 @@ subprojects {
     }
 
     tasks.named<Javadoc>("javadoc") {
-        title = "${projectName} - ${version}"
+        title = "$projectName - $version"
         options {
             overview = file("${rootDir}/javadoc/overview.html").absolutePath
             windowTitle = "${projectId}:${project.version}"
@@ -163,4 +165,31 @@ subprojects {
             sign(it)
         }
     }
+}
+
+tasks.named<Javadoc>("javadoc") {
+    group = "documentation"
+    description = "Generates Javadoc for all projects"
+    title = "$mainProjectName - $apiVersion"
+
+    source(project.subprojects.flatMap {
+        it.sourceSets.getByName("main").allJava
+    })
+    classpath = files(project.subprojects.flatMap {
+        it.sourceSets.getByName("main").compileClasspath
+    })
+    val targetDir = file("${project.layout.buildDirectory.asFile.get()}/docs/javadoc")
+    setDestinationDir(targetDir)
+    options {
+        overview = file("${rootDir}/javadoc/overview.html").absolutePath
+        windowTitle = "${mainProjectId}:${project.version}"
+        header = file("${rootDir}/javadoc/header.html").readText()
+            .replace("@version@", project.version as String)
+            .replace("@projectId@", mainProjectId)
+            .replace("@projectName@", mainProjectName)
+        locale = "en"
+    }
+
+    doNotTrackState("javadoc")
+    outputs.dir(targetDir)
 }
