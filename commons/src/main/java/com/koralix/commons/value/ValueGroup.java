@@ -46,8 +46,15 @@ public abstract class ValueGroup {
         return Value.on(value, this::onValueChanged);
     }
 
+    /**
+     * Called when a value changes.
+     * @param value the value
+     * @param oldValue the old value
+     * @param newValue the new value
+     * @param <T> the value type
+     */
     @SuppressWarnings("unchecked")
-    private <T> void onValueChanged(Value<T> value, T oldValue, T newValue) {
+    protected <T> void onValueChanged(Value<T> value, T oldValue, T newValue) {
         listeners
                 .getOrDefault(value, Set.of())
                 .forEach(listener -> ((Value.Listener<T>) listener).onValueChanged(value, oldValue, newValue));
