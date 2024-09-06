@@ -182,9 +182,9 @@ tasks.named<Javadoc>("javadoc") {
     setDestinationDir(targetDir)
     options {
         overview = file("${rootDir}/javadoc/overview.html").absolutePath
-        windowTitle = "${mainProjectId}:${project.version}"
+        windowTitle = "${mainProjectId}:${apiVersion}"
         header = file("${rootDir}/javadoc/header.html").readText()
-            .replace("@version@", project.version as String)
+            .replace("@version@", apiVersion as String)
             .replace("@projectId@", mainProjectId)
             .replace("@projectName@", mainProjectName)
         locale = "en"
