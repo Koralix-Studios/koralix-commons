@@ -45,13 +45,13 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li><a href="#field-detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -81,7 +81,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="BaseSubject.html" title="class in com.koralix.commons.observable">BaseSubject</a></code></dd>
+<dd><code><a href="BaseSubject.html" title="class in com.koralix.commons.observable">BaseSubject</a></code>, <code><a href="Operator.html" title="class in com.koralix.commons.observable">Operator</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">BaseObservable&lt;T&gt;</span>
@@ -90,21 +90,6 @@ implements <a href="Observable.html" title="interface in com.koralix.commons.obs
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color"><code><a href="#subscribers" class="member-name-link">subscribers</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -129,15 +114,18 @@ implements <a href="Observable.html" title="interface in com.koralix.commons.obs
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;R&gt;&nbsp;<a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pipe(java.util.function.Function)" class="member-name-link">pipe</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;,<wbr><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;&gt;&nbsp;mapper)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Subscription.html" title="class in com.koralix.commons.observable">Subscription</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subscribe(com.koralix.commons.observable.Observer)" class="member-name-link">subscribe</a><wbr>(<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;&nbsp;observer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unsubscribe(com.koralix.commons.observable.Observer)" class="member-name-link">unsubscribe</a><wbr>(<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;&nbsp;observer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#next(T)" class="member-name-link">next</a><wbr>(<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;R&gt;&nbsp;<a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pipe(com.koralix.commons.observable.OperatorFactory)" class="member-name-link">pipe</a><wbr>(<a href="OperatorFactory.html" title="interface in com.koralix.commons.observable">OperatorFactory</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>,<wbr>R&gt;&nbsp;factory)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Subscription.html" title="class in com.koralix.commons.observable">Subscription</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subscribe(com.koralix.commons.observable.Observer)" class="member-name-link">subscribe</a><wbr>(<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;&nbsp;observer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unsubscribe(com.koralix.commons.observable.Observer)" class="member-name-link">unsubscribe</a><wbr>(<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;&nbsp;observer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -150,20 +138,6 @@ implements <a href="Observable.html" title="interface in com.koralix.commons.obs
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="subscribers">
-<h3>subscribers</h3>
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;&gt;</span>&nbsp;<span class="element-name">subscribers</span></div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -194,22 +168,32 @@ implements <a href="Observable.html" title="interface in com.koralix.commons.obs
 </section>
 </li>
 <li>
-<section class="detail" id="pipe(java.util.function.Function)">
-<h3>pipe</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;</span>&nbsp;<span class="element-name">pipe</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;,<wbr><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;&gt;&nbsp;mapper)</span></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Observable.html#pipe(java.util.function.Function)">pipe</a></code>&nbsp;in interface&nbsp;<code><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;</code></dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="unsubscribe(com.koralix.commons.observable.Observer)">
 <h3>unsubscribe</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">unsubscribe</span><wbr><span class="parameters">(<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;&nbsp;observer)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Observable.html#unsubscribe(com.koralix.commons.observable.Observer)">unsubscribe</a></code>&nbsp;in interface&nbsp;<code><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="next(T)">
+<h3 id="next(java.lang.Object)">next</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">next</span><wbr><span class="parameters">(<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&nbsp;value)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Observable.html#next(T)">next</a></code>&nbsp;in interface&nbsp;<code><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="pipe(com.koralix.commons.observable.OperatorFactory)">
+<h3>pipe</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;</span>&nbsp;<span class="element-name">pipe</span><wbr><span class="parameters">(<a href="OperatorFactory.html" title="interface in com.koralix.commons.observable">OperatorFactory</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>,<wbr>R&gt;&nbsp;factory)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Observable.html#pipe(com.koralix.commons.observable.OperatorFactory)">pipe</a></code>&nbsp;in interface&nbsp;<code><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;<a href="BaseObservable.html" title="type parameter in BaseObservable">T</a>&gt;</code></dd>
 </dl>
 </section>
 </li>

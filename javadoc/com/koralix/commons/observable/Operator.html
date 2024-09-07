@@ -72,7 +72,9 @@ loadScripts(document, 'script');</script>
 <h1 title="Class Operator" class="title">Class Operator&lt;T,<wbr>R&gt;</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance"><a href="BaseObservable.html" title="class in com.koralix.commons.observable">com.koralix.commons.observable.BaseObservable</a>&lt;R&gt;
 <div class="inheritance">com.koralix.commons.observable.Operator&lt;T,<wbr>R&gt;</div>
+</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
@@ -81,8 +83,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">Operator&lt;T,<wbr>R&gt;</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;</span></div>
+<span class="extends-implements">extends <a href="BaseObservable.html" title="class in com.koralix.commons.observable">BaseObservable</a>&lt;R&gt;</span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -110,8 +111,8 @@ implements <a href="Observable.html" title="interface in com.koralix.commons.obs
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Operator.html" title="type parameter in Operator">R</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#apply(T)" class="member-name-link">apply</a><wbr>(<a href="Operator.html" title="type parameter in Operator">T</a>&nbsp;t)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="Operator.html" title="type parameter in Operator">R</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#map(T)" class="member-name-link">map</a><wbr>(<a href="Operator.html" title="type parameter in Operator">T</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Subscription.html" title="class in com.koralix.commons.observable">Subscription</a>&lt;<a href="Operator.html" title="type parameter in Operator">R</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subscribe(com.koralix.commons.observable.Observer)" class="member-name-link">subscribe</a><wbr>(<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="Operator.html" title="type parameter in Operator">R</a>&gt;&nbsp;observer)</code></div>
@@ -120,11 +121,11 @@ implements <a href="Observable.html" title="interface in com.koralix.commons.obs
 </div>
 </div>
 <div class="inherited-list">
+<h3 id="methods-inherited-from-class-com.koralix.commons.observable.BaseObservable">Methods inherited from class&nbsp;com.koralix.commons.observable.<a href="BaseObservable.html" title="class in com.koralix.commons.observable">BaseObservable</a></h3>
+<code><a href="BaseObservable.html#next(T)">next</a>, <a href="BaseObservable.html#pipe(com.koralix.commons.observable.OperatorFactory)">pipe</a>, <a href="BaseObservable.html#unsubscribe(com.koralix.commons.observable.Observer)">unsubscribe</a></code></div>
+<div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
-<div class="inherited-list">
-<h3 id="methods-inherited-from-class-com.koralix.commons.observable.Observable">Methods inherited from interface&nbsp;com.koralix.commons.observable.<a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a></h3>
-<code><a href="Observable.html#pipe(java.util.function.Function)">pipe</a>, <a href="Observable.html#unsubscribe(com.koralix.commons.observable.Observer)">unsubscribe</a></code></div>
 </section>
 </li>
 </ul>
@@ -151,19 +152,21 @@ implements <a href="Observable.html" title="interface in com.koralix.commons.obs
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="apply(T)">
-<h3 id="apply(java.lang.Object)">apply</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Operator.html" title="type parameter in Operator">R</a></span>&nbsp;<span class="element-name">apply</span><wbr><span class="parameters">(<a href="Operator.html" title="type parameter in Operator">T</a>&nbsp;t)</span></div>
-</section>
-</li>
-<li>
 <section class="detail" id="subscribe(com.koralix.commons.observable.Observer)">
 <h3>subscribe</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Subscription.html" title="class in com.koralix.commons.observable">Subscription</a>&lt;<a href="Operator.html" title="type parameter in Operator">R</a>&gt;</span>&nbsp;<span class="element-name">subscribe</span><wbr><span class="parameters">(<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="Operator.html" title="type parameter in Operator">R</a>&gt;&nbsp;observer)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Observable.html#subscribe(com.koralix.commons.observable.Observer)">subscribe</a></code>&nbsp;in interface&nbsp;<code><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;<a href="Operator.html" title="type parameter in Operator">T</a>&gt;</code></dd>
+<dt>Overrides:</dt>
+<dd><code><a href="BaseObservable.html#subscribe(com.koralix.commons.observable.Observer)">subscribe</a></code>&nbsp;in class&nbsp;<code><a href="BaseObservable.html" title="class in com.koralix.commons.observable">BaseObservable</a>&lt;<a href="Operator.html" title="type parameter in Operator">R</a>&gt;</code></dd>
 </dl>
+</section>
+</li>
+<li>
+<section class="detail" id="map(T)">
+<h3 id="map(java.lang.Object)">map</h3>
+<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="Operator.html" title="type parameter in Operator">R</a></span>&nbsp;<span class="element-name">map</span><wbr><span class="parameters">(<a href="Operator.html" title="type parameter in Operator">T</a>&nbsp;value)</span></div>
 </section>
 </li>
 </ul>

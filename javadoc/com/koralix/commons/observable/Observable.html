@@ -96,15 +96,18 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#pipe(java.util.function.Function)" class="member-name-link">pipe</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;<a href="Observable.html" title="type parameter in Observable">T</a>&gt;,<wbr><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;&gt;&nbsp;mapper)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Subscription.html" title="class in com.koralix.commons.observable">Subscription</a>&lt;<a href="Observable.html" title="type parameter in Observable">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#subscribe(com.koralix.commons.observable.Observer)" class="member-name-link">subscribe</a><wbr>(<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="Observable.html" title="type parameter in Observable">T</a>&gt;&nbsp;observer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#unsubscribe(com.koralix.commons.observable.Observer)" class="member-name-link">unsubscribe</a><wbr>(<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="Observable.html" title="type parameter in Observable">T</a>&gt;&nbsp;observer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#next(T)" class="member-name-link">next</a><wbr>(<a href="Observable.html" title="type parameter in Observable">T</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#pipe(com.koralix.commons.observable.OperatorFactory)" class="member-name-link">pipe</a><wbr>(<a href="OperatorFactory.html" title="interface in com.koralix.commons.observable">OperatorFactory</a>&lt;<a href="Observable.html" title="type parameter in Observable">T</a>,<wbr>R&gt;&nbsp;factory)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Subscription.html" title="class in com.koralix.commons.observable">Subscription</a>&lt;<a href="Observable.html" title="type parameter in Observable">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#subscribe(com.koralix.commons.observable.Observer)" class="member-name-link">subscribe</a><wbr>(<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="Observable.html" title="type parameter in Observable">T</a>&gt;&nbsp;observer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#unsubscribe(com.koralix.commons.observable.Observer)" class="member-name-link">unsubscribe</a><wbr>(<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="Observable.html" title="type parameter in Observable">T</a>&gt;&nbsp;observer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -126,15 +129,21 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="pipe(java.util.function.Function)">
-<h3>pipe</h3>
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;</span>&nbsp;<span class="element-name">pipe</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;<a href="Observable.html" title="type parameter in Observable">T</a>&gt;,<wbr><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;&gt;&nbsp;mapper)</span></div>
-</section>
-</li>
-<li>
 <section class="detail" id="unsubscribe(com.koralix.commons.observable.Observer)">
 <h3>unsubscribe</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">unsubscribe</span><wbr><span class="parameters">(<a href="Observer.html" title="interface in com.koralix.commons.observable">Observer</a>&lt;<a href="Observable.html" title="type parameter in Observable">T</a>&gt;&nbsp;observer)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="next(T)">
+<h3 id="next(java.lang.Object)">next</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">next</span><wbr><span class="parameters">(<a href="Observable.html" title="type parameter in Observable">T</a>&nbsp;value)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="pipe(com.koralix.commons.observable.OperatorFactory)">
+<h3>pipe</h3>
+<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;R&gt;</span>&nbsp;<span class="element-name">pipe</span><wbr><span class="parameters">(<a href="OperatorFactory.html" title="interface in com.koralix.commons.observable">OperatorFactory</a>&lt;<a href="Observable.html" title="type parameter in Observable">T</a>,<wbr>R&gt;&nbsp;factory)</span></div>
 </section>
 </li>
 </ul>

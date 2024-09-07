@@ -91,7 +91,7 @@ extends <a href="Observable.html" title="interface in com.koralix.commons.observ
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -103,12 +103,15 @@ extends <a href="Observable.html" title="interface in com.koralix.commons.observ
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#next(T)" class="member-name-link">next</a><wbr>(<a href="Subject.html" title="type parameter in Subject">T</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Subject.html" title="interface in com.koralix.commons.observable">Subject</a>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(T)" class="member-name-link">of</a><wbr>(T&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-com.koralix.commons.observable.Observable">Methods inherited from interface&nbsp;com.koralix.commons.observable.<a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a></h3>
-<code><a href="Observable.html#pipe(java.util.function.Function)">pipe</a>, <a href="Observable.html#subscribe(com.koralix.commons.observable.Observer)">subscribe</a>, <a href="Observable.html#unsubscribe(com.koralix.commons.observable.Observer)">unsubscribe</a></code></div>
+<code><a href="Observable.html#pipe(com.koralix.commons.observable.OperatorFactory)">pipe</a>, <a href="Observable.html#subscribe(com.koralix.commons.observable.Observer)">subscribe</a>, <a href="Observable.html#unsubscribe(com.koralix.commons.observable.Observer)">unsubscribe</a></code></div>
 </section>
 </li>
 </ul>
@@ -121,6 +124,12 @@ extends <a href="Observable.html" title="interface in com.koralix.commons.observ
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="of(T)">
+<h3 id="of(java.lang.Object)">of</h3>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Subject.html" title="interface in com.koralix.commons.observable">Subject</a>&lt;T&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(T&nbsp;value)</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="get()">
 <h3>get</h3>
 <div class="member-signature"><span class="return-type"><a href="Subject.html" title="type parameter in Subject">T</a></span>&nbsp;<span class="element-name">get</span>()</div>
@@ -130,6 +139,10 @@ extends <a href="Observable.html" title="interface in com.koralix.commons.observ
 <section class="detail" id="next(T)">
 <h3 id="next(java.lang.Object)">next</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">next</span><wbr><span class="parameters">(<a href="Subject.html" title="type parameter in Subject">T</a>&nbsp;value)</span></div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="Observable.html#next(T)">next</a></code>&nbsp;in interface&nbsp;<code><a href="Observable.html" title="interface in com.koralix.commons.observable">Observable</a>&lt;<a href="Subject.html" title="type parameter in Subject">T</a>&gt;</code></dd>
+</dl>
 </section>
 </li>
 </ul>
