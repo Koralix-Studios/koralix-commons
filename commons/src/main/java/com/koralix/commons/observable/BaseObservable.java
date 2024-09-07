@@ -2,10 +2,9 @@ package com.koralix.commons.observable;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 
 public abstract class BaseObservable<T> implements Observable<T> {
-    protected final List<Observer<T>> subscribers;
+    private final List<Observer<T>> subscribers;
 
     public BaseObservable() {
         subscribers = new ArrayList<>();
@@ -18,12 +17,17 @@ public abstract class BaseObservable<T> implements Observable<T> {
     }
 
     @Override
-    public <R> Observable<R> pipe(Function<Observable<T>, Observable<R>> mapper) {
-        return mapper.apply(this);
+    public void unsubscribe(Observer<T> observer) {
+        subscribers.remove(observer);
     }
 
     @Override
-    public void unsubscribe(Observer<T> observer) {
-        subscribers.remove(observer);
+    public void next(T value) {
+        subscribers.forEach(observer -> observer.next(value));
+    }
+
+    @Override
+    public <R> Observable<R> pipe(OperatorFactory<T, R> factory) {
+        return factory.create(this);
     }
 }
