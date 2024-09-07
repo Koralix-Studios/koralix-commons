@@ -1,2 +1,3 @@
 com.koralix.commons.event
+com.koralix.commons.observable
 com.koralix.commons.scheduler
