@@ -93,6 +93,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="OperatorFactory.html" title="interface in com.koralix.commons.observable">OperatorFactory</a>&lt;T,<wbr>T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#debounce(com.koralix.commons.scheduler.Scheduler,java.util.function.Function)" class="member-name-link">debounce</a><wbr>(<a href="../scheduler/Scheduler.html" title="interface in com.koralix.commons.scheduler">Scheduler</a>&nbsp;scheduler,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../scheduler/Scheduler.html" title="interface in com.koralix.commons.scheduler">Scheduler</a>,<wbr><a href="../scheduler/SchedulerTask.html" title="class in com.koralix.commons.scheduler">SchedulerTask</a>&lt;?&gt;&gt;&nbsp;factory)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="OperatorFactory.html" title="interface in com.koralix.commons.observable">OperatorFactory</a>&lt;T,<wbr>T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#debounceTick(com.koralix.commons.scheduler.DefaultScheduler,int)" class="member-name-link">debounceTick</a><wbr>(<a href="../scheduler/DefaultScheduler.html" title="class in com.koralix.commons.scheduler">DefaultScheduler</a>&nbsp;scheduler,
+ int&nbsp;ticks)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="OperatorFactory.html" title="interface in com.koralix.commons.observable">OperatorFactory</a>&lt;T,<wbr>T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#filter(java.util.function.Predicate)" class="member-name-link">filter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;T&gt;&nbsp;predicate)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T,<wbr>
@@ -127,6 +135,20 @@ R&gt;&nbsp;<a href="OperatorFactory.html" title="interface in com.koralix.common
 <h3>map</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>
 R&gt;</span>&nbsp;<span class="return-type"><a href="OperatorFactory.html" title="interface in com.koralix.commons.observable">OperatorFactory</a>&lt;T,<wbr>R&gt;</span>&nbsp;<span class="element-name">map</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;T,<wbr>R&gt;&nbsp;mapper)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="debounce(com.koralix.commons.scheduler.Scheduler,java.util.function.Function)">
+<h3>debounce</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="OperatorFactory.html" title="interface in com.koralix.commons.observable">OperatorFactory</a>&lt;T,<wbr>T&gt;</span>&nbsp;<span class="element-name">debounce</span><wbr><span class="parameters">(<a href="../scheduler/Scheduler.html" title="interface in com.koralix.commons.scheduler">Scheduler</a>&nbsp;scheduler,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="../scheduler/Scheduler.html" title="interface in com.koralix.commons.scheduler">Scheduler</a>,<wbr><a href="../scheduler/SchedulerTask.html" title="class in com.koralix.commons.scheduler">SchedulerTask</a>&lt;?&gt;&gt;&nbsp;factory)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="debounceTick(com.koralix.commons.scheduler.DefaultScheduler,int)">
+<h3>debounceTick</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="OperatorFactory.html" title="interface in com.koralix.commons.observable">OperatorFactory</a>&lt;T,<wbr>T&gt;</span>&nbsp;<span class="element-name">debounceTick</span><wbr><span class="parameters">(<a href="../scheduler/DefaultScheduler.html" title="class in com.koralix.commons.scheduler">DefaultScheduler</a>&nbsp;scheduler,
+ int&nbsp;ticks)</span></div>
 </section>
 </li>
 </ul>
