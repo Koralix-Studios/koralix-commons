@@ -8,7 +8,7 @@ public abstract class Operator<T, R> extends BaseObservable<R> {
     }
 
     @Override
-    public Subscription<R> subscribe(Observer<R> observer) {;
+    public Subscription<R> subscribe(Observer<R> observer) {
         return new SubscriptionGroup<>(
                 this,
                 super.subscribe(observer),

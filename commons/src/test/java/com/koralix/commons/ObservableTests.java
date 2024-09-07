@@ -3,6 +3,7 @@ package com.koralix.commons;
 import com.koralix.commons.observable.Observable;
 import com.koralix.commons.observable.Operators;
 import com.koralix.commons.observable.Subject;
+import com.koralix.commons.scheduler.DefaultScheduler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -45,5 +46,45 @@ public class ObservableTests {
             ++count[0];
         });
         Assertions.assertEquals(3, count[0]);
+    }
+
+    @Test
+    public void testDebounce() {
+        int[] count = {0};
+        DefaultScheduler scheduler = new DefaultScheduler();
+
+        Subject<Integer> subject = Subject.of(0);
+        subject.pipe(Operators.debounce(scheduler, scheduler1 ->
+            ((DefaultScheduler)scheduler1).onceAfter(1, tickSchedulerTask -> {
+
+            })
+        )).subscribe(value -> {
+            ++count[0];
+        });
+        scheduler.tick();
+        scheduler.tick();
+
+        Assertions.assertEquals(1, count[0]);
+
+        subject.next(5);
+        scheduler.tick();
+        scheduler.tick();
+
+        Assertions.assertEquals(2, count[0]);
+    }
+
+    @Test
+    public void testTickDebounce() {
+        int[] count = {0};
+        DefaultScheduler scheduler = new DefaultScheduler();
+
+        Subject<Integer> subject = Subject.of(0);
+        subject.pipe(Operators.debounceTick(scheduler, 0)).subscribe(value -> {
+            ++count[0];
+        });
+
+        scheduler.tick();
+
+        Assertions.assertEquals(1, count[0]);
     }
 }
